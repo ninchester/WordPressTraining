@@ -57,7 +57,7 @@ add_action('init', 'softuni_register_portfolio_cpt');
 
 
 /**
- * Register our custom taxonomy category
+ * Register custom taxonomy category
  *
  * @return void
  */
@@ -130,14 +130,24 @@ function portfolio_details_metabox_callback($post)
     // Add a nonce field for security
     wp_nonce_field('portfolio_details_metabox_nonce_action', 'portfolio_details_metabox_nonce');
 
-    $portfolio_address = get_post_meta($post->ID, 'portfolio_address', true);
+    $portfolio_client = get_post_meta($post->ID, 'portfolio_client', true);
 
-    echo '<label for="portfolio_address">Address: </label>';
-    echo '<input type="text" id="portfolio_address" name="portfolio_address" value="' . esc_attr($portfolio_address) . '" style="width: 100%;" />';
+    echo '<label for="portfolio_client">Client: </label>';
+    echo '<input type="text" id="portfolio_client" name="portfolio_client" value="' . esc_attr($portfolio_client) . '" style="width: 100%;" />';
+    echo '<br />';
+
+    $portfolio_url = get_post_meta($post->ID, 'portfolio_url', true);
+
+    echo '<label for="portfolio_url">URL: </label>';
+    echo '<input type="text" id="portfolio_url" name="portfolio_url" value="' . esc_attr($portfolio_url) . '" style="width: 100%;" />';
+
+    $portfolio_date = get_post_meta($post->ID, 'portfolio_date', true);
+    echo '<label for="portfolio_date" style="display:block; margin-top:10px;">Project Date: </label>';
+    echo '<input type="date" id="portfolio_date" name="portfolio_date" value="' . esc_attr($portfolio_date) . '" style="width: 100%;" />';
 }
 
 
-function your_custom_save_metabox($post_id)
+function custom_save_metabox($post_id)
 {
     // Check for nonce security
     if (
@@ -161,8 +171,23 @@ function your_custom_save_metabox($post_id)
         return;
     }
 
-    if (isset($_POST['portfolio_address'])) {
-        update_post_meta($post_id, 'portfolio_address', sanitize_text_field($_POST['portfolio_address']));
+    if (isset($_POST['portfolio_client'])) {
+        update_post_meta($post_id, 'portfolio_client', sanitize_text_field($_POST['portfolio_client']));
+    }
+
+    if (isset($_POST['portfolio_client'])) {
+        update_post_meta($post_id, 'portfolio_client', sanitize_text_field($_POST['portfolio_client']));
+    }
+
+    if (isset($_POST['portfolio_url'])) {
+        update_post_meta($post_id, 'portfolio_url', esc_url_raw($_POST['portfolio_url']));
+    }
+
+    if (isset($_POST['portfolio_date'])) {
+        $portfolio_date = sanitize_text_field($_POST['portfolio_date']);
+        if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $portfolio_date)) {
+            update_post_meta($post_id, 'portfolio_date', $portfolio_date);
+        }
     }
 }
-add_action('save_post', 'your_custom_save_metabox');
+add_action('save_post', 'custom_save_metabox');
