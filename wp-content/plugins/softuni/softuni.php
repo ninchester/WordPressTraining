@@ -29,3 +29,4 @@ if (! defined('SOFTUNI_PLUGIN_ASSETS_URL')) {
 
 require 'includes/cpt-portfolio.php';
 require 'includes/cpt-testimonial.php';
+require 'includes/cpt-service.php';
