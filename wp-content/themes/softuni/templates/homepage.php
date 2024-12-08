@@ -31,11 +31,11 @@
   <?php softuni_display_latest_posts(3, 'Recent Posts'); ?>
   <!-- /Blog Posts Section -->
 
-  <!-- Tabs Section -->
+  <!-- Features Section -->
   <?php
-  get_template_part('partials/tabs', 'section')
+  get_template_part('partials/features', 'section')
   ?>
-  <!-- /Tabs Section -->
+  <!-- /Features Section -->
 
   <!-- Testimonials Section -->
   <?php
