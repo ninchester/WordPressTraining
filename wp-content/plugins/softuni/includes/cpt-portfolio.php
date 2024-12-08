@@ -88,7 +88,7 @@ function softuni_register_portfolio_category_taxonomy()
         'rewrite'           => array('slug' => 'category'),
     );
 
-    register_taxonomy('potfolio-category', 'portfolio', $args);
+    register_taxonomy('portfolio-category', 'portfolio', $args);
 }
 
 add_action('init', 'softuni_register_portfolio_category_taxonomy');
