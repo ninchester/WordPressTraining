@@ -3,7 +3,7 @@ Contributors:
 Donate link: 
 Tags: WP Dummy Content Generator, WordPress dummy content plugin, Dummy content generation for WordPress, dummy posts and custom posts, woocommerce products
 Requires at least: 6.0
-Tested up to: 6.6
+Tested up to: 6.7
 Stable tag: trunk
 Requires PHP: 7.4
 License: GPLv2 or later
@@ -126,4 +126,5 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 3.4.2 - Removed composer error for php version dependency.
 3.4.3 - Fixed user data generation issue for firstname and last name.
 3.4.4 - Used admin_url() instead of hardcoding the admin URL.
+3.4.5 - Minor changes.
 == Upgrade Notice ==
