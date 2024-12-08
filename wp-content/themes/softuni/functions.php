@@ -52,3 +52,15 @@ function softuni_register_nav_menus()
     register_nav_menu('primary', 'Primary menu');
 }
 add_action('after_setup_theme', 'softuni_register_nav_menus', 0);
+
+/**
+ * Returns a html displaying posts, based on  given $number_of_posts and title of the html page.
+ * 
+ * @param mixed $number_of_posts Number of the posts to be displayed. By default it would show all the posts(value = -1).
+ * @param mixed $title Title that will be shown on the rendered html page.
+ * @return void
+ */
+function softuni_display_latest_posts($number_of_posts = -1, $title = 'Blog Posts')
+{
+    include 'partials/blog-posts-section.php';
+}

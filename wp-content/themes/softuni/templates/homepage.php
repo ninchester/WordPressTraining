@@ -28,9 +28,7 @@
   <!-- /Stats Section -->
 
   <!-- Blog Posts Section -->
-  <?php
-  get_template_part('partials/blog-posts', 'section')
-  ?>
+  <?php softuni_display_latest_posts(3, 'Recent Posts'); ?>
   <!-- /Blog Posts Section -->
 
   <!-- Tabs Section -->
