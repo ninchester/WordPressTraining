@@ -12,7 +12,7 @@ $portfolio_date = get_post_meta(get_the_ID(), 'portfolio_date', true);
             <h1>Portfolio Details</h1>
             <nav class="breadcrumbs">
                 <ol>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="<?php echo get_home_url('/'); ?>">Home</a></li>
                     <li class="current">Portfolio Details</li>
                 </ol>
             </nav>
