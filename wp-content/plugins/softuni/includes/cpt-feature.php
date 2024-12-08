@@ -50,7 +50,7 @@ function softuni_register_features_cpt()
         'supports'           => array('title', 'editor', 'thumbnail'),
     );
 
-    register_post_type('features', $args);
+    register_post_type('feature', $args);
 }
 
 add_action('init', 'softuni_register_features_cpt');
