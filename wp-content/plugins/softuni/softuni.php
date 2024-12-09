@@ -32,3 +32,4 @@ require 'includes/cpt-testimonial.php';
 require 'includes/cpt-service.php';
 require 'includes/cpt-feature.php';
 require 'includes/functions.php';
+require 'includes/options-page.php';

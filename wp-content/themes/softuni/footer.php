@@ -1,3 +1,6 @@
+<?php
+$softuni_options = get_option('softuni_custom_options');
+?>
 <footer id="footer" class="footer light-background">
 	<div class="container">
 		<div class="row g-4">
@@ -100,8 +103,10 @@
 	</div>
 </footer>
 
-<!-- Scroll Top -->
-<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<?php if (! empty($softuni_options['softuni_homepage_scroller_to_top']) && true == $softuni_options['softuni_homepage_scroller_to_top']) : ?>
+	<!-- Scroll Top -->
+	<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<?php endif; ?>
 
 <!-- Preloader -->
 <div id="preloader"></div>
