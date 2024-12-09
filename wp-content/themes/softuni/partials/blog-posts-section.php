@@ -8,14 +8,14 @@ $args = array(
 
 $query = new WP_Query($args);
 ?>
-<section id="blog-posts" class="blog-posts section">
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-        <h2><?php echo $title ?></h2>
-    </div><!-- End Section Title -->
-    <div class="container">
-        <div class="row gy-4">
-            <?php if ($query->have_posts()) : ?>
+<?php if ($query->have_posts()) : ?>
+    <section id="blog-posts" class="blog-posts section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2><?php echo $title ?></h2>
+        </div><!-- End Section Title -->
+        <div class="container">
+            <div class="row gy-4">
                 <?php while ($query->have_posts()) : $query->the_post(); ?>
                     <div class="col-md-6 col-lg-4">
                         <div class="post-entry" data-aos="fade-up" data-aos-delay="100">
@@ -44,7 +44,7 @@ $query = new WP_Query($args);
                         </div>
                     </div>
                 <?php endwhile; ?>
-            <?php endif; ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php endif; ?>

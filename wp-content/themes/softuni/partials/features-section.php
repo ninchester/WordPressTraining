@@ -6,12 +6,11 @@ $query = new WP_Query([
 ]);
 
 ?>
-<section id="tabs" class="tabs section light-background">
-
-    <div class="container">
-        <div class="row gap-x-lg-4 justify-content-between">
-            <div class="col-lg-4 js-custom-dots">
-                <?php if ($query->have_posts()) : ?>
+<?php if ($query->have_posts()) : ?>
+    <section id="tabs" class="tabs section light-background">
+        <div class="container">
+            <div class="row gap-x-lg-4 justify-content-between">
+                <div class="col-lg-4 js-custom-dots">
                     <?php while ($query->have_posts()) : $query->the_post(); ?>
                         <a href="#" class="service-item link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
                             <div class="service-icon color-1 mb-4">
@@ -28,39 +27,37 @@ $query = new WP_Query([
                         </a>
                         <!-- /.service -->
                     <?php endwhile; ?>
-                <?php endif; ?>
-            </div>
+                </div>
 
-            <div class="col-lg-8">
-                <div class="swiper init-swiper-tabs">
-                    <script type="application/json" class="swiper-config">
-                        {
-                            "loop": true,
-                            "speed": 600,
-                            "autoHeight": true,
-                            "autoplay": {
-                                "delay": 5000
-                            },
-                            "slidesPerView": "auto",
-                            "pagination": {
-                                "el": ".swiper-pagination",
-                                "type": "bullets",
-                                "clickable": true
-                            },
-                            "breakpoints": {
-                                "320": {
-                                    "slidesPerView": 1,
-                                    "spaceBetween": 40
+                <div class="col-lg-8">
+                    <div class="swiper init-swiper-tabs">
+                        <script type="application/json" class="swiper-config">
+                            {
+                                "loop": true,
+                                "speed": 600,
+                                "autoHeight": true,
+                                "autoplay": {
+                                    "delay": 5000
                                 },
-                                "1200": {
-                                    "slidesPerView": 1,
-                                    "spaceBetween": 1
+                                "slidesPerView": "auto",
+                                "pagination": {
+                                    "el": ".swiper-pagination",
+                                    "type": "bullets",
+                                    "clickable": true
+                                },
+                                "breakpoints": {
+                                    "320": {
+                                        "slidesPerView": 1,
+                                        "spaceBetween": 40
+                                    },
+                                    "1200": {
+                                        "slidesPerView": 1,
+                                        "spaceBetween": 1
+                                    }
                                 }
                             }
-                        }
-                    </script>
-                    <div class="swiper-wrapper">
-                        <?php if ($query->have_posts()) : ?>
+                        </script>
+                        <div class="swiper-wrapper">
                             <?php while ($query->have_posts()) : $query->the_post(); ?>
                                 <div class="swiper-slide">
                                     <?php
@@ -72,10 +69,10 @@ $query = new WP_Query([
                                     } ?>
                                 </div>
                             <?php endwhile; ?>
-                        <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php endif; ?>
