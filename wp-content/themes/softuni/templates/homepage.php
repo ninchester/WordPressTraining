@@ -20,13 +20,6 @@
   ?>
   <!-- /Services Section -->
 
-  <?php
-  get_template_part('partials/stats', 'section')
-  ?>
-  <!-- Stats Section -->
-
-  <!-- /Stats Section -->
-
   <!-- Blog Posts Section -->
   <?php softuni_display_latest_posts(3, 'Recent Posts'); ?>
   <!-- /Blog Posts Section -->
