@@ -148,3 +148,17 @@ function display_social_links_shortcode($atts)
     return $output;
 }
 add_shortcode('my_social_links', 'display_social_links_shortcode');
+
+/**
+ * For every CPT 'testimonials' the function will extend its title
+ * @param mixed $title The title of the post
+ * @return mixed Returns the extended title
+ */
+function extend_testimonial_title($title)
+{
+    if (get_post_type() === 'testimonials') {
+        $title = 'Testimonial from ' . $title;
+    }
+    return $title;
+}
+add_filter('the_title', 'extend_testimonial_title');
