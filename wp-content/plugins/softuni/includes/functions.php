@@ -96,3 +96,55 @@ function filter_portfolio()
 
 add_action('wp_ajax_nopriv_filter_portfolio', 'filter_portfolio');
 add_action('wp_ajax_filter_portfolio', 'filter_portfolio');
+
+
+/**
+ * This is the callback function to display social media links with a shortcode
+ * 
+ * @param mixed $atts User attributes
+ * @return string Html representation of the generated shortcode
+ */
+function display_social_links_shortcode($atts)
+{
+    $attributes = shortcode_atts(array(
+        'facebook'  => '',
+        'twitter'   => '',
+        'instagram' => '',
+        'linkedin'  => '',
+        'youtube'   => '',
+    ), $atts);
+
+    $output = '<div class="footer"><div class="widget"><ul class="list-unstyled social-icons light mb-3">';
+
+    if (!empty($attributes['facebook'])) {
+
+        $output .= '<li><a href="' . esc_url($attributes['facebook']) . '" target="_blank">
+                        <span class="bi bi-facebook" />
+                    </a></li>';
+    }
+    if (!empty($attributes['twitter'])) {
+        $output .= '<li><a href="' . esc_url($attributes['twitter']) . '" target="_blank">
+                        <span class="bi bi-twitter" />
+                    </a></li>';
+    }
+    if (!empty($attributes['instagram'])) {
+        $output .= '<li><a href="' . esc_url($attributes['instagram']) . '" target="_blank">
+                        <span class="bi bi-instagram" />
+                    </a></li>';
+    }
+    if (!empty($attributes['linkedin'])) {
+        $output .= '<li><a href="' . esc_url($attributes['linkedin']) . '" target="_blank">
+                        <span class="bi bi-linkedin" />
+                    </a></li>';
+    }
+    if (!empty($attributes['youtube'])) {
+        $output .= '<li><a href="' . esc_url($attributes['youtube']) . '" target="_blank">
+                        <span class="bi bi-youtube" />
+                    </a></li>';
+    }
+
+    $output .= '</div></div></ul>';
+
+    return $output;
+}
+add_shortcode('my_social_links', 'display_social_links_shortcode');
