@@ -487,6 +487,7 @@ h6 {
 .footer .widget ul li {
   margin-bottom: 10px;
   line-height: 1.5;
+  margin-right: 5px;
 }
 
 .footer .widget ul li a {
@@ -2393,4 +2394,45 @@ section,
   padding-left: 5px;
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
+}
+
+.social-links-shortcode-wrapper ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  padding-left: 0rem !important
+}
+
+.social-links-shortcode-wrapper ul li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.social-links-shortcode-wrapper li a span {
+  color: color-mix(in srgb, var(--heading-color), transparent 0%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s all ease-in-out;
+}
+
+.social-links-shortcode-wrapper li a {
+  list-style: none;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border-radius: 50%;
+  background: 
+color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.social-links-shortcode-wrapper li a:hover {
+  background: var(--accent-color);
+}
+
+.social-links-shortcode-wrapper li a:hover span {
+  color: var(--contrast-color);
 }

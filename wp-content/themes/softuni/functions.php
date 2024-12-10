@@ -64,3 +64,31 @@ function softuni_display_latest_posts($number_of_posts = -1, $title = 'Blog Post
 {
     include 'partials/blog-posts-section.php';
 }
+
+/**
+ * Register sidebars
+ * @return void
+ */
+function softuni_register_sidebars()
+{
+    register_sidebar(
+        array(
+            'id'            => 'footer-1',
+            'name'          => __('Footer 1 Sidebar'),
+            'description'   => __('A short description of the sidebar.'),
+            'before_widget' => '<div class="col-md-6">',
+            'after_widget'  => '</div>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'id'            => 'footer-2',
+            'name'          => __('Footer 2 Sidebar'),
+            'description'   => __('A short description of the sidebar.'),
+            'before_widget' => '<div class="col-md-6">',
+            'after_widget'  => '</div>',
+        )
+    );
+}
+add_action('widgets_init', 'softuni_register_sidebars');

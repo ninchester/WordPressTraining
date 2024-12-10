@@ -114,7 +114,7 @@ function display_social_links_shortcode($atts)
         'youtube'   => '',
     ), $atts);
 
-    $output = '<div class="footer"><div class="widget"><ul class="list-unstyled social-icons light mb-3">';
+    $output = '<div class="social-links-shortcode-wrapper"><ul>';
 
     if (!empty($attributes['facebook'])) {
 
@@ -143,7 +143,7 @@ function display_social_links_shortcode($atts)
                     </a></li>';
     }
 
-    $output .= '</div></div></ul>';
+    $output .= '</div></ul>';
 
     return $output;
 }
