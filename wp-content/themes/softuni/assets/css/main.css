@@ -2436,3 +2436,12 @@ color-mix(in srgb, var(--default-color), transparent 90%);
 .social-links-shortcode-wrapper li a:hover span {
   color: var(--contrast-color);
 }
+
+.portfolio-tags {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  margin-bottom: 20px;
+  margin-bottom: 20px;
+  gap: 5px;
+}

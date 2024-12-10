@@ -52,6 +52,17 @@ function render_portfolio_items_from_plugin($query)
             $html .= '<div class="portfolio-info">';
             $html .= '<h4>' . get_the_title() . '</h4>';
             $html .= '<p>' . get_the_excerpt() . '</p>';
+
+            $terms = wp_get_post_terms(get_the_ID(), 'portfolio-category');
+            if (!empty($terms)) {
+                $html .= '<div class="portfolio-tags">';
+                $html .= '<i class="bi bi-tags"></i>';
+                foreach ($terms as $term) {
+                    $html .= '<div>' . $term->name . '</div>';
+                }
+                $html .= '</div>';
+            }
+
             $html .= '<a href="' . get_the_permalink() . '" title="More Details" class="details-link">';
             $html .= '<i class="bi bi-link-45deg"></i></a>';
             $html .= '</div></div>';
