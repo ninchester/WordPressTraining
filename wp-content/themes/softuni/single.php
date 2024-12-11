@@ -8,7 +8,7 @@
             <h1><?php echo get_the_title(); ?></h1>
             <nav class="breadcrumbs">
                 <ol>
-                    <li><a href="<?php echo get_home_url('/'); ?>">Home</a></li>
+                    <li><a href="<?php echo get_home_url('/'); ?>"><?php _e('Home') ?></a></li>
                     <li class="current"><?php echo get_the_title(); ?></li>
                 </ol>
             </nav>

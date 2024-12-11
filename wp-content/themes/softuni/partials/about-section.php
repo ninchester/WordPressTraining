@@ -13,7 +13,7 @@ if ($page_id && get_post($page_id)) : ?>
                     <?php endif; ?>
                 </div>
                 <div class="col-lg-4 order-lg-1">
-                    <span class="section-subtitle" data-aos="fade-up">Welcome</span>
+                    <span class="section-subtitle" data-aos="fade-up"><?php _e('Welcome'); ?></span>
                     <h1 class="mb-4" data-aos="fade-up">
                         <?php echo get_the_title($page_id) ?>
                     </h1>

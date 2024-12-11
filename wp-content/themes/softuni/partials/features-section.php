@@ -65,7 +65,7 @@ $query = new WP_Query([
                                     if (is_array($image) && isset($image['url'])) {
                                         echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
                                     } else {
-                                        echo 'No image available.';
+                                        _e('No image available.');
                                     } ?>
                                 </div>
                             <?php endwhile; ?>

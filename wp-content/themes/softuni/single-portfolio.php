@@ -9,11 +9,11 @@ $portfolio_date = get_post_meta(get_the_ID(), 'portfolio_date', true);
     <!-- Page Title -->
     <div class="page-title light-background">
         <div class="container">
-            <h1>Portfolio Details</h1>
+            <h1><?php _e('Portfolio Details'); ?></h1>
             <nav class="breadcrumbs">
                 <ol>
                     <li><a href="<?php echo get_home_url('/'); ?>">Home</a></li>
-                    <li class="current">Portfolio Details</li>
+                    <li class="current"><?php _e('Portfolio Details') ?></li>
                 </ol>
             </nav>
         </div>
@@ -37,16 +37,16 @@ $portfolio_date = get_post_meta(get_the_ID(), 'portfolio_date', true);
                 <?php if (!empty($portfolio_client) || !empty($portfolio_date) || !empty($portfolio_url)) : ?>
                     <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
                         <div class="portfolio-info">
-                            <h3>Project information</h3>
+                            <h3><?php _e('Project information') ?></h3>
                             <ul>
                                 <?php if (!empty($portfolio_client)) : ?>
-                                    <li><strong>Client</strong><?php echo $portfolio_client; ?></li>
+                                    <li><strong><?php _e('Client') ?></strong><?php echo $portfolio_client; ?></li>
                                 <?php endif; ?>
                                 <?php if (!empty($portfolio_date)) : ?>
-                                    <li><strong>Project date</strong><?php echo $portfolio_date; ?></li>
+                                    <li><strong><?php _e('Project date') ?></strong><?php echo $portfolio_date; ?></li>
                                 <?php endif; ?>
                                 <?php if (!empty($portfolio_url)) : ?>
-                                    <li><strong>Project URL</strong> <a href="<?php echo $portfolio_url; ?>"><?php echo $portfolio_url; ?></a></li>
+                                    <li><strong><?php _e('Project URL') ?></strong> <a href="<?php echo $portfolio_url; ?>"><?php echo $portfolio_url; ?></a></li>
                                     <li><a href="<?php echo $portfolio_url; ?>" class="btn-visit align-self-start">Visit Website</a></li>
                                 <?php endif; ?>
                             </ul>

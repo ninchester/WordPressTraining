@@ -50,7 +50,7 @@
 
         </section><!-- /Blog Posts 2 Section -->
     <?php else : ?>
-        No posts found
+        <?php _e('No posts found') ?>
     <?php endif; ?>
 
     <!-- Blog Pagination Section -->

@@ -5,7 +5,7 @@
   <!-- Page Title -->
   <div class="page-title light-background">
     <div class="container">
-      <h1>Blog</h1>
+      <h1><?php _e('Blog'); ?></h1>
       <nav class="breadcrumbs">
         <ol>
           <li><a href="<?php echo get_home_url('/'); ?>">Home</a></li>
@@ -49,7 +49,7 @@
 
     </section><!-- /Blog Posts 2 Section -->
   <?php else : ?>
-    No posts found
+    <?php _e('No posts found'); ?>
   <?php endif; ?>
 
   <!-- Blog Pagination Section -->

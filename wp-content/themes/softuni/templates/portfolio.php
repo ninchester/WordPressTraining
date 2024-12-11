@@ -43,14 +43,10 @@ $portfolio_query = new WP_Query([
             } ?>
 
           </div><!-- End Portfolio Container -->
-
         </div>
-
       </div>
-
     </section><!-- /Portfolio Section -->
   <?php endif; ?>
-
 </main>
 
 <?php get_footer(); ?>

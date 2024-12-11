@@ -13,7 +13,7 @@
     <section id="blog-posts-2" class="blog-posts-2 section">
         <div class="container">
             <div class="row gy-5">
-                <div>Page Not Found</div>
+                <div><?php _e('Page Not Found'); ?></div>
             </div>
         </div>
     </section>
